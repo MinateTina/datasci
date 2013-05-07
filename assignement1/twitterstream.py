@@ -1,12 +1,13 @@
 import oauth2 as oauth
 import urllib2 as urllib
+import os as os
 
 # See Assginment 6 instructions or README for how to get these credentials
-access_token_key = "<Enter your access token key here>"
-access_token_secret = "<Enter your access token secret here>"
+access_token_key = "245917709-btlRCEP1pKenyANEOZAAGS3TggotEXWjjm1hkaXZ"
+access_token_secret = os.environ['TWITTER_ACCESS_SECRET']
 
-consumer_key = "<Enter consumer key>"
-consumer_secret = "<Enter consumer secret>"
+consumer_key = "wwlhkEdGehTciKe01qsg"
+consumer_secret = os.environ['TWITTER_CONSUMER_SECRET']
 
 _debug = 0
 
@@ -29,7 +30,7 @@ def twitterreq(url, method, parameters):
   req = oauth.Request.from_consumer_and_token(oauth_consumer,
                                              token=oauth_token,
                                              http_method=http_method,
-                                             http_url=url, 
+                                             http_url=url,
                                              parameters=parameters)
 
   req.sign_request(signature_method_hmac_sha1, oauth_consumer, oauth_token)
