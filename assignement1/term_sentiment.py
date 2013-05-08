@@ -40,7 +40,7 @@ def main():
         s2 = sentiment(text, sentiments)
 
     for k in sentiments:
-      print k + " " + str(sentiments[k])
+      print k.encode('utf-8') + " " + str(sentiments[k])
 
 
 if __name__ == '__main__':
