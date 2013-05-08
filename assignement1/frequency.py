@@ -18,7 +18,8 @@ def main():
         wordfreq[word] = wordfreq.get(word,0) + 1;
 
   for word in wordfreq:
-    print word.encode('utf-8') + " " + str(wordfreq[word]*1.0/wordcount)
+    if len(word) > 0:
+      print word.encode('utf-8') + " " + str(wordfreq[word]*1.0/wordcount)
 
 
 
